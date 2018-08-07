@@ -1,0 +1,323 @@
+<robot
+  name="Arm UDSF">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.470715532388592 0.00817143616602599 -0.217249122899845"
+        rpy="0 0 0" />
+      <mass
+        value="1.25107043766472" />
+      <inertia
+        ixx="0.0217405590435314"
+        ixy="-0.0218899754184432"
+        ixz="-0.00700617157014142"
+        iyy="0.0402141237628187"
+        iyz="-0.0023547006718547"
+        izz="0.0558160190216554" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Arm UDSF/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Arm UDSF/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="la">
+    <inertial>
+      <origin
+        xyz="0.13884061912792 0.0584236819656761 -0.022225004530128"
+        rpy="0 0 0" />
+      <mass
+        value="0.805738316840894" />
+      <inertia
+        ixx="0.000905266156127087"
+        ixy="-0.000764036180704797"
+        ixz="-2.19932832591017E-09"
+        iyy="0.00562558993784086"
+        iyz="-5.38400372028514E-10"
+        izz="0.00496149793368141" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Arm UDSF/meshes/la.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Arm UDSF/meshes/la.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="b-la"
+    type="revolute">
+    <origin
+      xyz="-0.20712 0.15338 0.074139"
+      rpy="1.9612 0.3394 2.8578" />
+    <parent
+      link="base_link" />
+    <child
+      link="la" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="ua">
+    <inertial>
+      <origin
+        xyz="-0.157286210361564 0.144496495793153 0.0349249907336261"
+        rpy="0 0 0" />
+      <mass
+        value="0.847277578337655" />
+      <inertia
+        ixx="0.0037586613086151"
+        ixy="0.00486870176467704"
+        ixz="2.61170096820299E-10"
+        iyy="0.00880717923327963"
+        iyz="-1.60871735637586E-10"
+        izz="0.0109683435727158" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Arm UDSF/meshes/ua.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Arm UDSF/meshes/ua.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="la-ua"
+    type="revolute">
+    <origin
+      xyz="0.0127 0.0254 0.0127"
+      rpy="3.1416 1.2941E-15 2.5708" />
+    <parent
+      link="la" />
+    <child
+      link="ua" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="w">
+    <inertial>
+      <origin
+        xyz="-0.0739953753431454 0.107500470601272 0.0285750052716065"
+        rpy="0 0 0" />
+      <mass
+        value="0.182609536923497" />
+      <inertia
+        ixx="0.00049189943958492"
+        ixy="0.000220056708536207"
+        ixz="-4.40392987105954E-12"
+        iyy="0.000262058292830524"
+        iyz="1.34849363866616E-11"
+        izz="0.000496514624788167" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Arm UDSF/meshes/w.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Arm UDSF/meshes/w.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ua-w"
+    type="revolute">
+    <origin
+      xyz="-0.26154 0.24093 0.0635"
+      rpy="-3.1416 1.8319E-15 -1.2356" />
+    <parent
+      link="ua" />
+    <child
+      link="w" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="hand">
+    <inertial>
+      <origin
+        xyz="0.0190457064181672 0.0343360869456164 -0.0380957579667052"
+        rpy="0 0 0" />
+      <mass
+        value="0.235079651777631" />
+      <inertia
+        ixx="0.00123531986490541"
+        ixy="-6.05282927402859E-08"
+        ixz="3.85883035594614E-12"
+        iyy="0.000177930584996721"
+        iyz="5.97996989610607E-08"
+        izz="0.00105738928683835" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Arm UDSF/meshes/hand.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Arm UDSF/meshes/hand.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="w-hand"
+    type="revolute">
+    <origin
+      xyz="-0.10247 0.27897 0.022118"
+      rpy="-1.4491E-14 -1.2593 -0.99779" />
+    <parent
+      link="w" />
+    <child
+      link="hand" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="fingers">
+    <inertial>
+      <origin
+        xyz="0.019316100627391 0.143253755168147 0.0444499911492122"
+        rpy="0 0 0" />
+      <mass
+        value="0.132085232100119" />
+      <inertia
+        ixx="0.000752024003929646"
+        ixy="-4.54379559238204E-06"
+        ixz="1.33735979105168E-11"
+        iyy="0.000177972846097994"
+        iyz="1.22375995465906E-10"
+        izz="0.000574135703708145" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Arm UDSF/meshes/fingers.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Arm UDSF/meshes/fingers.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hand-fingers"
+    type="prismatic">
+    <origin
+      xyz="0 0 -0.08255"
+      rpy="-1.1102E-15 0 2.1649E-15" />
+    <parent
+      link="hand" />
+    <child
+      link="fingers" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>

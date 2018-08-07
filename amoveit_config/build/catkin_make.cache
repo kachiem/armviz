@@ -1,0 +1,2 @@
+
+-DCATKIN_DEVEL_PREFIX=/home/karen/amoveit_config/devel -DCMAKE_INSTALL_PREFIX=/home/karen/amoveit_config/install -G Unix Makefiles

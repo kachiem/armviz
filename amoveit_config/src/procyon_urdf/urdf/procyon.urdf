@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<robot name="procyon">
+
+  <link name="base_link">
+    <origin xyz="-0.470715532388592 0.00817143616602599 -0.217249122899845" rpy="0 0 0" />
+      <visual>
+        <geometry>
+          <cylinder length=".05" radius=".3"/>
+        </geometry>
+      </visual>
+  </link>
+
+  <joint name="base-plate" type="fixed">
+    <parent link="base_link"/>
+    <child link="lower_arm"/>
+     <origin xyz="-0.20712 0.15338 0.074139" rpy="1.9612 0.3394 2.8578" />
+  </joint>
+
+  <link name="lower_arm">
+    <origin xyz="0.13884061912792 0.0584236819656761 -0.022225004530128" rpy="0 0 0" />
+    <visual>
+      <geometry>
+        <box size="0.6 0.1 0.2"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="lowerupper_arm" type="revolute">
+    <parent link="lower_arm"/>
+    <child link="upper_arm"/>
+    <origin xyz="0.0127 0.0254 0.0127" rpy="3.1416 1.2941E-15 2.5708" />
+    <axis xyz="0 0 1"/>
+    <limit effort="1000.0" lower="0.0" upper="0.4" velocity="0.25"/>
+  </joint>
+
+  <link name="upper_arm">
+    <origin xyz="-0.157286210361564 0.144496495793153 0.0349249907336261" rpy="0 0 0" />
+    <visual>
+      <geometry>
+        <box size="0.4 0.1 0.2"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="upper-wrist" type="revolute">
+    <parent link="upper_arm"/>
+    <child link="wrist"/>
+    <origin xyz="-0.26154 0.24093 0.0635" rpy="-3.1416 1.8319E-15 -1.2356" />
+    <limit effort="100.0" lower="0.0" upper="0.4" velocity="0.25"/>
+  </joint>
+
+  <link name="wrist">
+    <origin xyz="-0.0739953753431454 0.107500470601272 0.0285750052716065" rpy="0 0 0" />
+    <visual>
+      <geometry>
+        <box size="0.2 0.3 0.2"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="wrist-hand" type="revolute">
+    <parent link="wrist"/>
+    <child link="hand"/>
+    <origin xyz="-0.10247 0.27897 0.022118" rpy="-1.4491E-14 -1.2593 -0.99779" />
+    <limit effort="100.0" lower="0.0" upper="0.4" velocity="0.25"/>
+  </joint>
+
+  <link name="hand">
+    <origin xyz="-0.157286210361564 0.144496495793153 0.0349249907336261" rpy="0 0 0" />
+    <visual>
+      <geometry>
+        <box size="0.1 0.1 0.15"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="hand-grip" type="prismatic">
+    <parent link="hand"/>
+    <child link="grip"/>
+    <origin xyz="0 0 -0.08255" rpy="-1.1102E-15 0 2.1649E-15" />
+    <limit effort="100.0" lower="0.0" upper="0.4" velocity="0.25"/>
+  </joint>
+
+
+  <link name="grip">
+    <origin xyz="0.0190457064181672 0.0343360869456164 -0.0380957579667052" rpy="0 0 0" />
+    <visual>
+      <geometry>
+        <box size="0.05 0.05 0.25"/>
+      </geometry>
+    </visual>
+  </link>
+
+
+  
+</robot>

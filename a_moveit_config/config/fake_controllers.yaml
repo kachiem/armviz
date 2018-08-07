@@ -1,0 +1,11 @@
+controller_list:
+  - name: fake_arm_controller
+    joints:
+      - lowerupper_arm
+      - upper-wrist
+      - wrist-hand
+      - hand-grip
+  - name: fake_grip_controller
+    joints:
+      - wrist-hand
+      - hand-grip

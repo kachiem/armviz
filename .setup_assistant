@@ -1,0 +1,10 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: udrf
+    relative_path: urdf/Arm UDSF.urdf
+  SRDF:
+    relative_path: config/Arm UDSF.srdf
+  CONFIG:
+    author_name: kron
+    author_email: kachiem@ucsd.edu
+    generated_timestamp: 1527855071

@@ -1,0 +1,85 @@
+/* prevents scrolling */
+/*
+html, body {
+    margin: 0; 
+    height: 100%; 
+    overflow: hidden;
+    background-color: #7187d6;
+} 
+
+#title {
+    font-family: fantasy;
+    color: black;
+}
+
+.panel {
+    position: relative;
+    display: inline-block;
+    background-color: transparent;
+    border: 1px solid #FFF;
+    border-radius: 5px;
+    height:100%;
+}
+
+.divider {
+    position: relative;
+    height: 1px;
+    width: 90%;
+    left: 5%;
+    margin: 2% 0% 2% 0%;
+}
+ */
+
+
+
+/* Arm Control */
+#left-panel {
+    left: 0px;
+    width:20%;
+    min-width: 350px;
+    text-align:center;
+}
+
+.row {
+    margin-top: 5px;
+    margin-left: 0;
+    margin-right: 5px;
+}
+
+/* Feeds Section */
+#middle-panel {
+    top: 0%;
+    width: 59%;
+    min-width: 700px;
+    text-align: center;
+}
+
+[data-new-window] {
+    display: none;
+}
+
+/* Sensor Data */
+#right-panel {
+    width:40%;
+    min-width: 350px;
+    padding: 5px;
+    text-align: center;
+}
+
+#GPS {
+    width: 20%;
+    min-width: 350px;
+    text-align: left;
+}
+
+#IMU {
+    width: 20%;
+    min-width: 350px;
+    text-align: left;
+}
+
+#ASS {
+    width: 20%;
+    min-width: 350px;
+    text-align: left;
+}
